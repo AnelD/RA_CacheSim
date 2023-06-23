@@ -3,7 +3,16 @@
 #include <cmath>
 #include <chrono>
 #include <cstdlib>
+#include <fstream>
+#include <string>
+#include <sstream>
 
+
+
+//TODO pass cache parameters through console
+//Clean up Code
+//Refactor code maybe split into different files
+//Macros for long typename -> timestamp
 
 // Struct that keeps track of all relevant information of a single cache block
 struct CacheBlock
@@ -198,7 +207,60 @@ void load(CacheBlock** cache, unsigned int adress, int tagBits,
 
 }
 
+// Function to read a trace file and extract the relevant information
+// [#][Load==0/Store==1][32-Bit Adress][Irrelevant]
+// Needs to read 2 numbers after # in every line
+// First number chooses which function gets called 
+// Second number gets split up into tag and index  
 
+void read(std::string filename, int tagBits, int offsetBits)
+{
+    int i = 0;
+    std::ifstream inputFile(filename); // Tries to open the file
+
+    if (inputFile.is_open()) 
+    {
+        std::string line;
+
+        while (std::getline(inputFile, line)) 
+        {
+            // Reads every line as a string
+            std::istringstream iss(line);
+            char hashtag;
+            std::string hexNum;
+            int load_store, ignoredNum; // load == 0, store == 1
+            unsigned int address, adrTag, adrIndex;
+            // Extracts the # and numbers from the string
+            // # and the 3rd number get ignored, first number is saved to num1
+            // 2nd number is saved as string to hexNum and gets converted with stoi
+            if (iss >> hashtag >> load_store >> hexNum >> ignoredNum) 
+            {
+                // Convert the hexadecimal number to integer -> need to convert to unsigned
+                // stoul converts to unsigned long but seems to work fine
+                address = std::stoul(hexNum, nullptr, 16); 
+
+                std::cout << "L/S: " << load_store << ", Adress: " << address << ", Number 3: " << ignoredNum << std::endl;
+                
+                // Extract tag and index from adress
+                adrTag = adr_to_tag(address, tagBits);
+                adrIndex = adr_to_index(address, tagBits, offsetBits);
+                
+                std::cout << "Index: " << adrIndex << ", Tag: " << adrTag << std::endl << std::endl;
+
+            }
+
+            // Testing only first 20 lines to see if function works
+            //i++;
+            //if(i >= 20)
+            //    break;
+        }
+    } 
+    
+    else 
+    {
+        std::cout << "Unable to open the file: " << filename << std::endl;
+    }
+}
 
 
 int main(int arg, char** argv)
@@ -218,6 +280,9 @@ int main(int arg, char** argv)
     int addressBits = 32;  
     int tagBits = addressBits - (offsetBits + indexBits);
 
+    read("art.trace", tagBits, offsetBits);
+    
+    
     CacheBlock** cache = new CacheBlock*[cache_set_num];
     for (int i = 0; i < cache_set_num; i++)
         cache[i] = new CacheBlock[cache_associtivity];
