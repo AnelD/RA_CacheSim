@@ -17,7 +17,8 @@
 // Macros for long typename -> timestamp [X]
 // Have Output not be overwritten [X]
 // Timestamp when benchmark was performed and used arguments  [X]
-// FIX crafty_mem.trace not working -> out of range exception @stoul() []
+// FIX crafty_mem.trace not working -> out of range exception @stoul() [?]
+// -> changing stoul() to stoull() fixes it but the address is atleast 33 bits long so simulation might give wrong results 
 
 // Struct that keeps track of all relevant information of a single cache block
 struct CacheBlock
@@ -241,9 +242,9 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
             if (iss >> hashtag >> load_store >> hexNum >> ignoredNum) 
             {
                 // Convert the hexadecimal number to integer -> need to convert to unsigned
-                // stoul converts to unsigned long but seems to work fine
+                // stoul converts to unsigned int but seems to work fine
                 // out of range excepetion with crafty_mem.trace
-                address = std::stoul(hexNum, nullptr, 16); 
+                address = std::stoull(hexNum, nullptr, 16); 
 
                 //std::cout << "L/S: " << load_store << ", Adress: " << address << ", Number 3: " << ignoredNum << std::endl;
                 
