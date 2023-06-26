@@ -6,16 +6,18 @@
 #include <fstream>
 #include <string>
 #include <sstream>
+#include <ctime>
 
 #define TIME_TYPE std::chrono::high_resolution_clock::time_point
 
 // TODO
-// Pass cache parameters through console []
+// Pass cache parameters through console [X]
 // Clean up Code []
 // Refactor code maybe split into different files []
 // Macros for long typename -> timestamp [X]
-// Have Output not be overwritten []
-// Timestamp when benchmark was performed and used arguments  []
+// Have Output not be overwritten [X]
+// Timestamp when benchmark was performed and used arguments  [X]
+// FIX crafty_mem.trace not working -> out of range exception @stoul() []
 
 // Struct that keeps track of all relevant information of a single cache block
 struct CacheBlock
@@ -30,7 +32,6 @@ struct CacheBlock
 
 // Function that splits the 32-Bit adress into TAG bits
 // Address:  [TAG][INDEX][OFFSET]
-
 unsigned int adr_to_tag(unsigned int adr, int tagBits)
 {
     // Number of bits in unsigned int, size of returns bytes so *8 for bits
@@ -48,7 +49,6 @@ unsigned int adr_to_tag(unsigned int adr, int tagBits)
 
 // Function that splits the 32-Bit adress into INDEX bits
 // Address:  [TAG][INDEX][OFFSET]
-
 unsigned int adr_to_index(unsigned int adr, int tagBits, int offsetBits)
 {
 
@@ -215,7 +215,6 @@ void load(CacheBlock** cache, unsigned int address, int tagBits,
 // Needs to read 2 numbers after # in every line
 // First number chooses which function gets called 
 // Second number gets split up into tag and index  
-
 void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cache, 
             int associativity, int policy, int &accesses, int &hit, 
             int &miss, int &evictions)
@@ -243,6 +242,7 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
             {
                 // Convert the hexadecimal number to integer -> need to convert to unsigned
                 // stoul converts to unsigned long but seems to work fine
+                // out of range excepetion with crafty_mem.trace
                 address = std::stoul(hexNum, nullptr, 16); 
 
                 //std::cout << "L/S: " << load_store << ", Adress: " << address << ", Number 3: " << ignoredNum << std::endl;
@@ -289,20 +289,52 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
 
 
 //Function to write the results of the cache simulation to an output file
-
-void write(std::string filename, int hit, int miss, int accesses, int evictions)
+void write( std::string filename, int hit, int miss, int accesses, int evictions, 
+            int cache_block_num, int cache_block_size, int associativity, 
+            int eviction_policy, std::string inputfile)
 {
+    // Timestamping
+    // Get the current system time
+    auto currentTime = std::chrono::system_clock::now();
+
+    // Convert the current system time to a time_t object
+    std::time_t time = std::chrono::system_clock::to_time_t(currentTime);
+
+    // Convert the time_t object to a tm struct
+    std::tm* timeInfo = std::localtime(&time);
+
+    // Extract the day, hour, and month from the tm struct
+    int min = timeInfo->tm_min;
+    int day = timeInfo->tm_mday;
+    int hour = timeInfo->tm_hour;
+    int month = timeInfo->tm_mon + 1; // tm_mon is zero-based, so add 1
+       
     float miss_rate = 100.0/accesses*miss;
 
-    std::ofstream outputFile(filename);
+    std::ofstream outputFile;
 
-    if (outputFile.is_open()) {
+    outputFile.open(filename, std::ios::app); // Append data without overwriting
+
+    if (outputFile.is_open()) 
+    {
+        // Timestamp
+        outputFile << "--------------------------------------------";
+        outputFile << "--------------------------------------------" << std::endl;
+        outputFile << month << "/" << day << " @" << hour; 
+        outputFile << ":" << min << " Input File: " << inputfile << std::endl << std::endl;
+
         // Write data to the file
         outputFile << "Cache accesses: " << accesses << std::endl;
         outputFile << "Cache hits: " << hit << std::endl;
         outputFile << "Cache evictions: " << evictions << std::endl;
         outputFile << "Cache misses: " << miss << std::endl;
         outputFile << "Cache miss rate: " << miss_rate << " %" << std::endl;
+
+        // Parameters used
+        outputFile << "Number of cache blocks: " << cache_block_num;
+        outputFile << ", Size of blocks: " << cache_block_size;
+        outputFile << ", Associativity: " << associativity;
+        outputFile << ", Eviction policy: " << eviction_policy << std::endl;
 
         // Close the file
         outputFile.close();
@@ -415,7 +447,7 @@ int main(int argc, char** argv)
 
     read(input_filename, tagBits, offsetBits, cache, cache_associativity, eviction_policy, accesses, hit, miss, evictions);
     
-    write(output_filename, hit, miss, accesses, evictions);
+    write(output_filename, hit, miss, accesses, evictions, cache_block_num, cache_block_size, cache_associativity, eviction_policy, input_filename);
       
     for (int i = 0; i < cache_set_num; ++i) 
         delete[] cache[i];
