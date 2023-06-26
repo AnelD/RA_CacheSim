@@ -350,6 +350,10 @@ void write( std::string filename, int hit, int miss, int accesses, int evictions
 
 int main(int argc, char** argv)
 {
+    // RNG seed
+    std::srand(std::time(0));
+
+
     std::string input_filename;
     std::string output_filename;
 
