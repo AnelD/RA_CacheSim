@@ -1,0 +1,5 @@
+Cache accesses: 2436886
+Cache hits: 1252761
+Cache evictions: 703993
+Cache misses: 479122
+Cache miss rate: 19.6612 %
