@@ -3,3 +3,76 @@ Cache hits: 1252761
 Cache evictions: 703993
 Cache misses: 479122
 Cache miss rate: 19.6612 %
+------------------------------------------
+Cache accesses: 2436886
+Cache hits: 1252761
+Cache evictions: 703994
+Cache misses: 479122
+Cache miss rate: 19.6612 %
+------------------------------------------
+Cache accesses: 2434927
+Cache hits: 1792678
+Cache evictions: 702792
+Cache misses: 477163
+Cache miss rate: 19.5966 %
+------------------------------------------
+Cache accesses: 2434927
+Cache hits: 1792678
+Cache evictions: 702792
+Cache misses: 477163
+Cache miss rate: 19.5966 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+------------------------------------------------------------------------------------
+6/26 @18
+
+Cache accesses: 2434927
+Cache hits: 1792684
+Cache evictions: 702792
+Cache misses: 477163
+Cache miss rate: 19.5966 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+------------------------------------------------------------------------------------
+6/26 @18:39
+
+Cache accesses: 2434927
+Cache hits: 1792678
+Cache evictions: 702792
+Cache misses: 477163
+Cache miss rate: 19.5966 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+------------------------------------------------------------------------------------
+6/26 @18:45 Input File: art.trace
+
+Cache accesses: 2434927
+Cache hits: 1792678
+Cache evictions: 702792
+Cache misses: 477163
+Cache miss rate: 19.5966 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/26 @18:45 Input File: art.trace
+
+Cache accesses: 2434927
+Cache hits: 1792678
+Cache evictions: 702792
+Cache misses: 477163
+Cache miss rate: 19.5966 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/26 @18:47 Input File: trace.out
+
+Cache accesses: 9131674
+Cache hits: 4876327
+Cache evictions: 3541950
+Cache misses: 2187817
+Cache miss rate: 23.9586 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/26 @18:47 Input File: swim.trace
+
+Cache accesses: 1684029
+Cache hits: 925965
+Cache evictions: 597383
+Cache misses: 163143
+Cache miss rate: 9.68766 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
