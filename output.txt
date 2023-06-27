@@ -328,3 +328,426 @@ Cache evictions: 1086720
 Cache misses: 652230
 Cache miss rate: 30.0136 %
 Number of cache blocks: 32, Size of blocks: 8, Associativity: 16, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @11:51 Input File: swim.trace
+
+Cache accesses: 1520900
+Cache hits: 15
+Cache evictions: 1520883
+Cache misses: 1086393
+Cache miss rate: 71.4309 %
+Number of cache blocks: 32, Size of blocks: 8, Associativity: 16, Eviction policy: 1
+----------------------------------------------------------------------------------------
+6/27 @11:59 Input File: swim.trace
+
+Cache accesses: 1520896
+Cache hits: 434174
+Cache evictions: 1086720
+Cache misses: 652230
+Cache miss rate: 42.8846 %
+Number of cache blocks: 32, Size of blocks: 8, Associativity: 16, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @12:1 Input File: crafty_mem.trace
+
+Cache accesses: 40888574
+Cache hits: 16749461
+Cache evictions: 24139111
+Cache misses: 18530746
+Cache miss rate: 45.3201 %
+Number of cache blocks: 32, Size of blocks: 8, Associativity: 16, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @12:3 Input File: crafty_mem.trace
+
+Cache accesses: 90383131
+Cache hits: 83974706
+Cache evictions: 6408172
+Cache misses: 800058
+Cache miss rate: 0.885185 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @12:4 Input File: crafty_mem.trace
+
+Cache accesses: 84632715
+Cache hits: 77003160
+Cache evictions: 7629302
+Cache misses: 2021188
+Cache miss rate: 2.38819 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 1
+----------------------------------------------------------------------------------------
+6/27 @12:5 Input File: crafty_mem.trace
+
+Cache accesses: 85240777
+Cache hits: 78839165
+Cache evictions: 6401359
+Cache misses: 793245
+Cache miss rate: 0.930593 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 2
+----------------------------------------------------------------------------------------
+6/27 @12:7 Input File: crafty_mem.trace
+
+Cache accesses: 300412346
+Cache hits: 293312033
+Cache evictions: 7100281
+Cache misses: 1491946
+Cache miss rate: 0.496633 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 2
+----------------------------------------------------------------------------------------
+6/27 @12:8 Input File: crafty_mem.trace
+
+Cache accesses: 299984304
+Cache hits: 292883496
+Cache evictions: 7100776
+Cache misses: 1492441
+Cache miss rate: 0.497506 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 2
+----------------------------------------------------------------------------------------
+6/27 @12:9 Input File: crafty_mem.trace
+
+Cache accesses: 300078314
+Cache hits: 292977575
+Cache evictions: 7100707
+Cache misses: 1492372
+Cache miss rate: 0.497328 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 2
+----------------------------------------------------------------------------------------
+6/27 @12:10 Input File: crafty_mem.trace
+
+Cache accesses: 417891104
+Cache hits: 408596261
+Cache evictions: 9294811
+Cache misses: 3686476
+Cache miss rate: 0.882162 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @12:11 Input File: crafty_mem.trace
+
+Cache accesses: 54373922
+Cache hits: 47841630
+Cache evictions: 6531785
+Cache misses: 923925
+Cache miss rate: 1.69921 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @12:12 Input File: crafty_mem.trace
+
+Cache accesses: 38633967
+Cache hits: 31564870
+Cache evictions: 7068086
+Cache misses: 1460730
+Cache miss rate: 3.78095 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 1, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @12:13 Input File: crafty_mem.trace
+
+Cache accesses: 38633967
+Cache hits: 31564870
+Cache evictions: 7068086
+Cache misses: 1460730
+Cache miss rate: 3.78095 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 1, Eviction policy: 2
+----------------------------------------------------------------------------------------
+6/27 @12:13 Input File: crafty_mem.trace
+
+Cache accesses: 53862808
+Cache hits: 47281985
+Cache evictions: 6580316
+Cache misses: 972456
+Cache miss rate: 1.80543 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction policy: 2
+----------------------------------------------------------------------------------------
+6/27 @16:40 Input File: crafty_mem.trace
+
+Cache accesses: 44272564
+Cache hits: 37952590
+Cache evictions: 733126
+Cache misses: 711607
+Cache miss rate: 1.60733 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:41 Input File: swim.trace
+
+Cache accesses: 1848722
+Cache hits: 1251087
+Cache evictions: 271343
+Cache misses: 163143
+Cache miss rate: 8.82464 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:47 Input File: swim.trace
+
+Cache accesses: 1862839
+Cache hits: 1345729
+Cache evictions: 190815
+Cache misses: 82618
+Cache miss rate: 4.43506 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 8, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:47 Input File: swim.trace
+
+Cache accesses: 1874780
+Cache hits: 1357755
+Cache evictions: 190219
+Cache misses: 82533
+Cache miss rate: 4.40228 %
+Number of cache blocks: 8192, Size of blocks: 32, Associativity: 8, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:47 Input File: swim.trace
+
+Cache accesses: 1905475
+Cache hits: 1388427
+Cache evictions: 189218
+Cache misses: 82556
+Cache miss rate: 4.33257 %
+Number of cache blocks: 16384, Size of blocks: 32, Associativity: 8, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:48 Input File: swim.trace
+
+Cache accesses: 1996837
+Cache hits: 1479811
+Cache evictions: 187150
+Cache misses: 82534
+Cache miss rate: 4.13324 %
+Number of cache blocks: 32768, Size of blocks: 32, Associativity: 8, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:49 Input File: swim.trace
+
+Cache accesses: 2359867
+Cache hits: 1884106
+Cache evictions: 91534
+Cache misses: 41269
+Cache miss rate: 1.74879 %
+Number of cache blocks: 32768, Size of blocks: 64, Associativity: 8, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:49 Input File: swim.trace
+
+Cache accesses: 4289673
+Cache hits: 3844861
+Cache evictions: 19821
+Cache misses: 10320
+Cache miss rate: 0.240578 %
+Number of cache blocks: 32768, Size of blocks: 256, Associativity: 8, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @16:49 Input File: swim.trace
+
+Cache accesses: 1941786
+Cache hits: 1496974
+Cache evictions: 10111
+Cache misses: 10320
+Cache miss rate: 0.531469 %
+Number of cache blocks: 32768, Size of blocks: 256, Associativity: 1, Eviction policy: 0
+----------------------------------------------------------------------------------------
+6/27 @17:4 Input File: swim.trace
+
+Cache accesses: 1520886
+Cache hits: 0
+Cache evictions: 0
+Cache misses: 2607280
+Cache miss rate: 171.432 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @17:4 Input File: swim.trace
+
+Cache accesses: 1520886
+Cache hits: 0
+Cache evictions: 0
+Cache misses: 2607280
+Cache miss rate: 171.432 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:11 Input File: swim.trace
+
+Cache accesses: 2941873
+Cache hits: 660378
+Cache evictions: 433981
+Cache misses: 2281495
+Cache miss rate: 77.5525 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:11 Input File: swim.trace
+
+Cache accesses: 2941879
+Cache hits: 660384
+Cache evictions: 433981
+Cache misses: 2281495
+Cache miss rate: 77.5523 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:12 Input File: swim.trace
+
+Cache accesses: 3760933
+Cache hits: 1533789
+Cache evictions: 433981
+Cache misses: 2227144
+Cache miss rate: 59.2179 %
+Number of cache blocks: 4096, Size of blocks: 64, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:13 Input File: swim.trace
+
+Cache accesses: 2951074
+Cache hits: 669579
+Cache evictions: 433471
+Cache misses: 2281495
+Cache miss rate: 77.3107 %
+Number of cache blocks: 8192, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:17 Input File: swim.trace
+
+Cache accesses: 1672433
+Cache hits: 1072875
+Cache evictions: 81512
+Cache misses: 599558
+Cache miss rate: 35.8494 %
+Number of cache blocks: 8192, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:17 Input File: swim.trace
+
+Cache accesses: 1672445
+Cache hits: 1072887
+Cache evictions: 81512
+Cache misses: 599558
+Cache miss rate: 35.8492 %
+Number of cache blocks: 8192, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:18 Input File: swim.trace
+
+Cache accesses: 1672503
+Cache hits: 1072945
+Cache evictions: 81511
+Cache misses: 599558
+Cache miss rate: 35.8479 %
+Number of cache blocks: 8192, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:19 Input File: crafty_mem.trace
+
+Cache accesses: 195515298
+Cache hits: 195377773
+Cache evictions: 41140
+Cache misses: 137525
+Cache miss rate: 0.0703398 %
+Number of cache blocks: 8192, Size of blocks: 32, Associativity: 8, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:20 Input File: crafty_mem.trace
+
+Cache accesses: 39406055
+Cache hits: 37846851
+Cache evictions: 718809
+Cache misses: 1559204
+Cache miss rate: 3.95676 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:21 Input File: crafty_mem.trace
+
+Cache accesses: 39406046
+Cache hits: 37846842
+Cache evictions: 718808
+Cache misses: 1559204
+Cache miss rate: 3.95676 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:23 Input File: crafty_mem.trace
+
+Cache accesses: 60679904
+Cache hits: 58630697
+Cache evictions: 6600004
+Cache misses: 2049207
+Cache miss rate: 3.37708 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:32 Input File: art.trace
+
+Cache accesses: 2796357
+Cache hits: 1823740
+Cache evictions: 701673
+Cache misses: 972617
+Cache miss rate: 34.7816 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:33 Input File: art.trace
+
+Cache accesses: 2795211
+Cache hits: 1829006
+Cache evictions: 697955
+Cache misses: 966205
+Cache miss rate: 34.5664 %
+Number of cache blocks: 2048, Size of blocks: 32, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:33 Input File: art.trace
+
+Cache accesses: 2805247
+Cache hits: 1846463
+Cache evictions: 693225
+Cache misses: 958784
+Cache miss rate: 34.1782 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:34 Input File: art.trace
+
+Cache accesses: 2737914
+Cache hits: 1889511
+Cache evictions: 644568
+Cache misses: 848403
+Cache miss rate: 30.9872 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 2, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:34 Input File: art.trace
+
+Cache accesses: 4503544
+Cache hits: 3654993
+Cache evictions: 644897
+Cache misses: 848551
+Cache miss rate: 18.8419 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:34 Input File: art.trace
+
+Cache accesses: 4009629
+Cache hits: 3142217
+Cache evictions: 428445
+Cache misses: 867412
+Cache miss rate: 21.6332 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction eviction_policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:35 Input File: art.trace
+
+Cache accesses: 4009629
+Cache hits: 3142217
+Cache evictions: 428445
+Cache misses: 867412
+Cache miss rate: 21.6332 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 0, Writing policy: 0
+----------------------------------------------------------------------------------------
+6/27 @22:35 Input File: art.trace
+
+Cache accesses: 4503544
+Cache hits: 3654993
+Cache evictions: 644897
+Cache misses: 848551
+Cache miss rate: 18.8419 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:35 Input File: art.trace
+
+Cache accesses: 4463809
+Cache hits: 3617514
+Cache evictions: 643807
+Cache misses: 846295
+Cache miss rate: 18.959 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 1, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:36 Input File: art.trace
+
+Cache accesses: 3388390
+Cache hits: 2537387
+Cache evictions: 646117
+Cache misses: 851003
+Cache miss rate: 25.1153 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:36 Input File: art.trace
+
+Cache accesses: 3388420
+Cache hits: 2537448
+Cache evictions: 646104
+Cache misses: 850972
+Cache miss rate: 25.1141 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
