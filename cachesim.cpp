@@ -19,6 +19,8 @@
 // Timestamp when benchmark was performed and used arguments  [X]
 // FIX crafty_mem.trace not working -> out of range exception @stoul() [?]
 // -> changing stoul() to stoull() fixes it but the address is atleast 33 bits long so simulation might give wrong results 
+// 
+// Write allocate []
 
 // Struct that keeps track of all relevant information of a single cache block
 struct CacheBlock
@@ -26,7 +28,7 @@ struct CacheBlock
     unsigned int tag;
     bool valid;
     
-    // Timestamp for evicition policy
+    // Timestamp for evicition eviction_policy
     TIME_TYPE timestamp; 
 
 };
@@ -94,19 +96,49 @@ TIME_TYPE getTimestamp()
 }
 
 // Function to store into cache
-// policy: 0 == LRU,  1 == FIFO,  2 == Random
+// eviction_policy: 0 == LRU,  1 == FIFO,  2 == Random
 void store( CacheBlock** cache, unsigned int address, int tagBits, 
-            int offsetBits, int associativity, int policy, int &evictions, int &accesses)
+            int offsetBits, int associativity, int eviction_policy, int &evictions, 
+            int &accesses, int &hit, int &miss, int writing_policy, bool call_by_load)
 {
     unsigned int tag = adr_to_tag(address, tagBits);
     unsigned int index = adr_to_index(address, tagBits, offsetBits);
 
-    accesses++;
+    // Check if data is already in cache
+    // If not decide with write policy to fetch it or not 
+    // 0 == No allocate 1 == Write allocate
+    bool tag_not_found = true;
+    
+    for (int i = 0; i < associativity; i++)
+    {
+        if (cache[index][i].tag == tag)
+        {  
+            // Write hit
+            hit++;
+            accesses++;
+            tag_not_found = false;
+            if(eviction_policy == 0)
+                cache[index][i].timestamp = getTimestamp();
+        }
+       
+    } 
+
+    // Write miss
+    if(tag_not_found)
+    {
+        miss++;
+        accesses++;
+    }
+    
+    // If No allocate as write policy and function was called by load function
+    // We don't fetch the memory 
+    if((writing_policy == 0) && call_by_load)
+        return ;
+    
 
     // Check if all blocks in a set are already filled (valid = true)
     // If one is found that isnt filled fill it
-
-    bool set_full;
+    bool set_full = false;
 
     for (int i = 0; i < associativity; i++)
     {
@@ -119,11 +151,10 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
         else 
             set_full = true;
     }
+    // If all are filled decide which to overwrite using the chosen eviction eviction_policy
 
-    // If all are filled decide which to overwrite using the chosen eviction policy
-
-    // Overwrite using LRU policy
-    if(set_full && (policy == 0))
+    // Overwrite using LRU eviction_policy
+    if(set_full && (eviction_policy == 0))
     {
         TIME_TYPE lru_t = cache[index][0].timestamp; 
         int lru_index = 0;
@@ -143,11 +174,10 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
         evictions++;
     }
 
-    // Overwrite using FIFO policy
-    else if(set_full && (policy == 1))
+    // Overwrite using FIFO eviction_policy
+    else if(set_full && (eviction_policy == 1))
     {
-        std::chrono::high_resolution_clock::time_point 
-                    lru_t = cache[index][0].timestamp; // Ugly
+        TIME_TYPE lru_t = cache[index][0].timestamp;
         int lru_index = 0;
         
         for (int i = 1; i > associativity; i++)
@@ -165,7 +195,7 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
         evictions++;
     }
 
-    else if(set_full && (policy == 2))
+    else if(set_full && (eviction_policy == 2))
     {   
         int rand_index = rand() % associativity;
 
@@ -178,12 +208,12 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
 
 
 // Function to read a cache entry 
-// if entry exists hit++ else miss++ and load that entry according to eviction policy
+// if entry exists hit++ else miss++ and load that entry according to eviction eviction_policy
 void load(CacheBlock** cache, unsigned int address, int tagBits, 
-            int offsetBits, int associativity, int policy, 
-            int &miss, int &hit, int &evictions, int &accesses)
+            int offsetBits, int associativity, int eviction_policy, 
+            int &miss, int &hit, int &evictions, int &accesses, int writing_policy)
 {
-    accesses++;
+    
 
     unsigned int tag = adr_to_tag(address, tagBits);
     unsigned int index = adr_to_index(address, tagBits, offsetBits);
@@ -197,16 +227,21 @@ void load(CacheBlock** cache, unsigned int address, int tagBits,
     {
         if (cache[index][i].tag == tag)
         {  
+            accesses++;
             hit++;
             tag_not_found = false;
+            if(eviction_policy == 0)
+                cache[index][i].timestamp = getTimestamp();
         }
        
     } 
     
     if(tag_not_found)
     {
+        accesses++;
         miss++;
-        store(cache, address, tagBits, offsetBits, associativity, policy, evictions, accesses);
+        store(  cache, address, tagBits, offsetBits, associativity, 
+                eviction_policy, evictions, accesses, hit, miss, writing_policy, 0);
     }
 
 }
@@ -217,8 +252,8 @@ void load(CacheBlock** cache, unsigned int address, int tagBits,
 // First number chooses which function gets called 
 // Second number gets split up into tag and index  
 void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cache, 
-            int associativity, int policy, int &accesses, int &hit, 
-            int &miss, int &evictions)
+            int associativity, int eviction_policy, int &accesses, int &hit, 
+            int &miss, int &evictions, int writing_policy)
 {
     int i = 0;
     std::ifstream inputFile(filename); // Tries to open the file
@@ -258,14 +293,16 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
             // Loads address from cache
             if(load_store == 0)
             {
-                load(cache, address, tagBits, offsetBits, associativity, policy, miss, hit, evictions, accesses);
+                load(   cache, address, tagBits, offsetBits, associativity, 
+                        eviction_policy, miss, hit, evictions, accesses, writing_policy);
             }
 
 
             // Stores address into cache
             else if (load_store == 1)
             {
-                store(cache, address, tagBits, offsetBits, associativity, policy, evictions, accesses);
+                store(  cache, address, tagBits, offsetBits, associativity, 
+                        eviction_policy, evictions, accesses, hit, miss, writing_policy, 1);
             }
 
 
@@ -292,7 +329,7 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
 //Function to write the results of the cache simulation to an output file
 void write( std::string filename, int hit, int miss, int accesses, int evictions, 
             int cache_block_num, int cache_block_size, int associativity, 
-            int eviction_policy, std::string inputfile)
+            int eviction_policy, std::string inputfile, int writing_policy)
 {
     // Timestamping
     // Get the current system time
@@ -335,7 +372,8 @@ void write( std::string filename, int hit, int miss, int accesses, int evictions
         outputFile << "Number of cache blocks: " << cache_block_num;
         outputFile << ", Size of blocks: " << cache_block_size;
         outputFile << ", Associativity: " << associativity;
-        outputFile << ", Eviction policy: " << eviction_policy << std::endl;
+        outputFile << ", Eviction policy: " << eviction_policy; 
+        outputFile << ", Writing policy: " << writing_policy << std::endl;
 
         // Close the file
         outputFile.close();
@@ -369,7 +407,8 @@ int main(int argc, char** argv)
     int cache_block_num = 1024; // == Number of cache blocks
     int cache_block_size = 32; // Size of cache blocks in bytes
     int cache_associativity = 2; // Cache associativity 
-    int eviction_policy = 0;    //policy: 0 == LRU,  1 == FIFO,  2 == Random
+    int eviction_policy = 0;    // eviction policy: 0 == LRU,  1 == FIFO,  2 == Random
+    int writing_policy = 0; // writing policy: 0 == No allocate,    1 == Write allocate
 
     for (int i = 1; i < argc - 1; ++i) 
     { // Start from index 1 to skip the program name
@@ -425,6 +464,10 @@ int main(int argc, char** argv)
         }
         else if (arg == wTag) 
         {
+            if(nextArg == "NoAlloc")
+                writing_policy = 0;
+            else if (nextArg == "Alloc")
+                writing_policy = 1;
         }
         
     }
@@ -450,10 +493,12 @@ int main(int argc, char** argv)
     for (int i = 0; i < cache_set_num; i++)
         cache[i] = new CacheBlock[cache_associativity];
 
-    read(input_filename, tagBits, offsetBits, cache, cache_associativity, eviction_policy, accesses, hit, miss, evictions);
+    read(   input_filename, tagBits, offsetBits, cache, cache_associativity, 
+            eviction_policy, accesses, hit, miss, evictions, writing_policy);
     
-    write(output_filename, hit, miss, accesses, evictions, cache_block_num, cache_block_size, cache_associativity, eviction_policy, input_filename);
-      
+    write(  output_filename, hit, miss, accesses, evictions, cache_block_num, 
+            cache_block_size, cache_associativity, eviction_policy, input_filename, writing_policy);
+
     for (int i = 0; i < cache_set_num; ++i) 
         delete[] cache[i];
     
