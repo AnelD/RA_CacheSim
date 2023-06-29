@@ -13,14 +13,14 @@
 // TODO
 // Pass cache parameters through console [X]
 // Clean up Code []
-// Refactor code maybe split into different files []
+// 
 // Macros for long typename -> timestamp [X]
 // Have Output not be overwritten [X]
 // Timestamp when benchmark was performed and used arguments  [X]
 // FIX crafty_mem.trace not working -> out of range exception @stoul() [?]
 // -> changing stoul() to stoull() fixes it but the address is atleast 33 bits long so simulation might give wrong results 
 // 
-// Write allocate []
+// Write allocate [X]
 
 // Struct that keeps track of all relevant information of a single cache block
 struct CacheBlock
@@ -99,7 +99,8 @@ TIME_TYPE getTimestamp()
 // eviction_policy: 0 == LRU,  1 == FIFO,  2 == Random
 void store( CacheBlock** cache, unsigned int address, int tagBits, 
             int offsetBits, int associativity, int eviction_policy, int &evictions, 
-            int &accesses, int &hit, int &miss, int writing_policy, bool call_by_load)
+            int &accesses, int &read_hit, int &read_miss, int &write_hit, int &write_miss, 
+            int writing_policy, bool call_by_load)
 {
     unsigned int tag = adr_to_tag(address, tagBits);
     unsigned int index = adr_to_index(address, tagBits, offsetBits);
@@ -114,7 +115,7 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
         if (cache[index][i].tag == tag)
         {  
             // Write hit
-            hit++;
+            write_hit++;
             accesses++;
             tag_not_found = false;
             if(eviction_policy == 0)
@@ -126,7 +127,7 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
     // Write miss
     if(tag_not_found)
     {
-        miss++;
+        write_miss++;
         accesses++;
     }
     
@@ -211,7 +212,7 @@ void store( CacheBlock** cache, unsigned int address, int tagBits,
 // if entry exists hit++ else miss++ and load that entry according to eviction eviction_policy
 void load(CacheBlock** cache, unsigned int address, int tagBits, 
             int offsetBits, int associativity, int eviction_policy, 
-            int &miss, int &hit, int &evictions, int &accesses, int writing_policy)
+            int &read_miss, int &read_hit, int &write_miss, int &write_hit, int &evictions, int &accesses, int writing_policy)
 {
     
 
@@ -228,7 +229,7 @@ void load(CacheBlock** cache, unsigned int address, int tagBits,
         if (cache[index][i].tag == tag)
         {  
             accesses++;
-            hit++;
+            read_hit++;
             tag_not_found = false;
             if(eviction_policy == 0)
                 cache[index][i].timestamp = getTimestamp();
@@ -239,9 +240,9 @@ void load(CacheBlock** cache, unsigned int address, int tagBits,
     if(tag_not_found)
     {
         accesses++;
-        miss++;
+        read_miss++;
         store(  cache, address, tagBits, offsetBits, associativity, 
-                eviction_policy, evictions, accesses, hit, miss, writing_policy, 0);
+                eviction_policy, evictions, accesses, read_hit, read_miss, write_hit, write_miss, writing_policy, 0);
     }
 
 }
@@ -252,8 +253,8 @@ void load(CacheBlock** cache, unsigned int address, int tagBits,
 // First number chooses which function gets called 
 // Second number gets split up into tag and index  
 void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cache, 
-            int associativity, int eviction_policy, int &accesses, int &hit, 
-            int &miss, int &evictions, int writing_policy)
+            int associativity, int eviction_policy, int &accesses, int &read_hit, 
+            int &read_miss, int& write_hit, int& write_miss, int &evictions, int writing_policy)
 {
     int i = 0;
     std::ifstream inputFile(filename); // Tries to open the file
@@ -294,7 +295,8 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
             if(load_store == 0)
             {
                 load(   cache, address, tagBits, offsetBits, associativity, 
-                        eviction_policy, miss, hit, evictions, accesses, writing_policy);
+                        eviction_policy, read_miss, read_hit, write_miss, write_hit, 
+                        evictions, accesses, writing_policy);
             }
 
 
@@ -302,7 +304,7 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
             else if (load_store == 1)
             {
                 store(  cache, address, tagBits, offsetBits, associativity, 
-                        eviction_policy, evictions, accesses, hit, miss, writing_policy, 1);
+                        eviction_policy, evictions, accesses, read_hit, read_miss, write_hit, write_miss, writing_policy, 1);
             }
 
 
@@ -327,7 +329,8 @@ void read(  std::string filename, int tagBits, int offsetBits, CacheBlock** cach
 
 
 //Function to write the results of the cache simulation to an output file
-void write( std::string filename, int hit, int miss, int accesses, int evictions, 
+void write( std::string filename, int read_hit, int read_miss, int write_hit, 
+            int write_miss, int accesses, int evictions, 
             int cache_block_num, int cache_block_size, int associativity, 
             int eviction_policy, std::string inputfile, int writing_policy)
 {
@@ -347,7 +350,7 @@ void write( std::string filename, int hit, int miss, int accesses, int evictions
     int hour = timeInfo->tm_hour;
     int month = timeInfo->tm_mon + 1; // tm_mon is zero-based, so add 1
        
-    float miss_rate = 100.0/accesses*miss;
+    float miss_rate = 100.0/accesses*(write_miss+read_miss);
 
     std::ofstream outputFile;
 
@@ -362,10 +365,11 @@ void write( std::string filename, int hit, int miss, int accesses, int evictions
         outputFile << ":" << min << " Input File: " << inputfile << std::endl << std::endl;
 
         // Write data to the file
-        outputFile << "Cache accesses: " << accesses << std::endl;
-        outputFile << "Cache hits: " << hit << std::endl;
         outputFile << "Cache evictions: " << evictions << std::endl;
-        outputFile << "Cache misses: " << miss << std::endl;
+        outputFile << "Cache accesses: " << accesses << std::endl;
+        outputFile << "Cache read hits: " << read_hit << " | Cache write hits: " << write_hit << std::endl;
+        outputFile << "Cache read miss: " << read_miss << " | Cache write miss: " << write_miss << std::endl;
+        outputFile << "Cache miss total: " << read_miss+write_miss << " | Cache hit total: " << read_hit+write_hit << std::endl;
         outputFile << "Cache miss rate: " << miss_rate << " %" << std::endl;
 
         // Parameters used
@@ -482,8 +486,11 @@ int main(int argc, char** argv)
     int addressBits = 32;  
     int tagBits = addressBits - (offsetBits + indexBits);
 
-    int miss = 0;
-    int hit = 0;
+
+    int write_hit = 0;
+    int write_miss = 0;
+    int read_miss = 0;
+    int read_hit = 0;
     int evictions = 0;
     int accesses = 0;  // Keeps track of all cache acceses, hits, misses and evicitons
 
@@ -494,9 +501,9 @@ int main(int argc, char** argv)
         cache[i] = new CacheBlock[cache_associativity];
 
     read(   input_filename, tagBits, offsetBits, cache, cache_associativity, 
-            eviction_policy, accesses, hit, miss, evictions, writing_policy);
+            eviction_policy, accesses, read_hit, read_miss, write_hit, write_miss, evictions, writing_policy);
     
-    write(  output_filename, hit, miss, accesses, evictions, cache_block_num, 
+    write(  output_filename, read_hit, read_miss, write_hit, write_miss, accesses, evictions, cache_block_num, 
             cache_block_size, cache_associativity, eviction_policy, input_filename, writing_policy);
 
     for (int i = 0; i < cache_set_num; ++i) 

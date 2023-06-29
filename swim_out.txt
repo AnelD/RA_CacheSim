@@ -1,0 +1,180 @@
+----------------------------------------------------------------------------------------
+6/28 @22:53 Input File: swim.trace
+
+Cache evictions: 597381
+Cache accesses: 2012507
+Cache read hits: 925979 | Cache write hits: 651535
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1577514
+Cache miss rate: 21.6145 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:53 Input File: swim.trace
+
+Cache evictions: 597125
+Cache accesses: 2015319
+Cache read hits: 927961 | Cache write hits: 652365
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1580326
+Cache miss rate: 21.5843 %
+Number of cache blocks: 2048, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:53 Input File: swim.trace
+
+Cache evictions: 596603
+Cache accesses: 2018475
+Cache read hits: 928095 | Cache write hits: 655409
+Cache read miss: 163132 | Cache write miss: 271839
+Cache miss total: 434971 | Cache hit total: 1583504
+Cache miss rate: 21.5495 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 515853
+Cache accesses: 2422354
+Cache read hits: 1009784 | Cache write hits: 1194984
+Cache read miss: 81615 | Cache write miss: 135971
+Cache miss total: 217586 | Cache hit total: 2204768
+Cache miss rate: 8.98242 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 475079
+Cache accesses: 2626981
+Cache read hits: 1050919 | Cache write hits: 1467200
+Cache read miss: 40841 | Cache write miss: 68021
+Cache miss total: 108862 | Cache hit total: 2518119
+Cache miss rate: 4.144 %
+Number of cache blocks: 1024, Size of blocks: 128, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 451317
+Cache accesses: 2729612
+Cache read hits: 1078797 | Cache write hits: 1603065
+Cache read miss: 17079 | Cache write miss: 30671
+Cache miss total: 47750 | Cache hit total: 2681862
+Cache miss rate: 1.74933 %
+Number of cache blocks: 1024, Size of blocks: 256, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 760436
+Cache accesses: 1848449
+Cache read hits: 761263 | Cache write hits: 217380
+Cache read miss: 326198 | Cache write miss: 543608
+Cache miss total: 869806 | Cache hit total: 978643
+Cache miss rate: 47.056 %
+Number of cache blocks: 1024, Size of blocks: 16, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 1086468
+Cache accesses: 2173482
+Cache read hits: 434530 | Cache write hits: 0
+Cache read miss: 652230 | Cache write miss: 1086722
+Cache miss total: 1738952 | Cache hit total: 434530
+Cache miss rate: 80.0077 %
+Number of cache blocks: 1024, Size of blocks: 8, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 1086514
+Cache accesses: 2173430
+Cache read hits: 434638 | Cache write hits: 0
+Cache read miss: 652150 | Cache write miss: 1086642
+Cache miss total: 1738792 | Cache hit total: 434638
+Cache miss rate: 80.0022 %
+Number of cache blocks: 1024, Size of blocks: 4, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 597507
+Cache accesses: 2013275
+Cache read hits: 926156 | Cache write hits: 652126
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1578282
+Cache miss rate: 21.6062 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 8, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 597571
+Cache accesses: 2013751
+Cache read hits: 926716 | Cache write hits: 652042
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1578758
+Cache miss rate: 21.6011 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 16, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:54 Input File: swim.trace
+
+Cache evictions: 597603
+Cache accesses: 2013335
+Cache read hits: 926296 | Cache write hits: 652046
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1578342
+Cache miss rate: 21.6056 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:55 Input File: swim.trace
+
+Cache evictions: 597621
+Cache accesses: 2012871
+Cache read hits: 926262 | Cache write hits: 651612
+Cache read miss: 163145 | Cache write miss: 271852
+Cache miss total: 434997 | Cache hit total: 1577874
+Cache miss rate: 21.6108 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 64, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:55 Input File: swim.trace
+
+Cache evictions: 597125
+Cache accesses: 1902803
+Cache read hits: 924758 | Cache write hits: 543052
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1467810
+Cache miss rate: 22.8606 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:55 Input File: swim.trace
+
+Cache evictions: 596617
+Cache accesses: 1684022
+Cache read hits: 923258 | Cache write hits: 325784
+Cache read miss: 163136 | Cache write miss: 271844
+Cache miss total: 434980 | Cache hit total: 1249042
+Cache miss rate: 25.8298 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 1, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:55 Input File: swim.trace
+
+Cache evictions: 597302
+Cache accesses: 1688241
+Cache read hits: 927186 | Cache write hits: 326219
+Cache read miss: 163064 | Cache write miss: 271772
+Cache miss total: 434836 | Cache hit total: 1253405
+Cache miss rate: 25.7568 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 1, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:55 Input File: swim.trace
+
+Cache evictions: 597329
+Cache accesses: 1910598
+Cache read hits: 926018 | Cache write hits: 549691
+Cache read miss: 163091 | Cache write miss: 271798
+Cache miss total: 434889 | Cache hit total: 1475709
+Cache miss rate: 22.7619 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @22:55 Input File: swim.trace
+
+Cache evictions: 149107
+Cache accesses: 1674068
+Cache read hits: 940854 | Cache write hits: 0
+Cache read miss: 149361 | Cache write miss: 583853
+Cache miss total: 733214 | Cache hit total: 940854
+Cache miss rate: 43.7983 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 2, Writing policy: 0

@@ -751,3 +751,83 @@ Cache evictions: 646104
 Cache misses: 850972
 Cache miss rate: 25.1141 %
 Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:58 Input File: art.trace
+
+Cache evictions: 646206
+Cache accesses: 3390160
+Cache read hits: 1831615 | Cache write hits: 707370
+Cache read miss: 420579 | Cache write hits: 430596
+Cache miss total: 851175 | Cache hit total: 2538985
+Cache miss rate: 25.1072 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:59 Input File: art.trace
+
+Cache evictions: 646186
+Cache accesses: 3388689
+Cache read hits: 1830487 | Cache write hits: 707062
+Cache read miss: 420559 | Cache write miss: 430581
+Cache miss total: 851140 | Cache hit total: 2537549
+Cache miss rate: 25.1171 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @23:0 Input File: trace.out
+
+Cache evictions: 2978763
+Cache accesses: 11024572
+Cache read hits: 5612240 | Cache write hits: 1478348
+Cache read miss: 1624632 | Cache write miss: 2309352
+Cache miss total: 3933984 | Cache hit total: 7090588
+Cache miss rate: 35.6838 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @23:1 Input File: crafty_mem.trace
+
+Cache evictions: 6196014
+Cache accesses: 102367806
+Cache read hits: 80518049 | Cache write hits: 20652672
+Cache read miss: 587902 | Cache write miss: 609183
+Cache miss total: 1197085 | Cache hit total: 101170721
+Cache miss rate: 1.1694 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/29 @9:4 Input File: \testprogramms\swim.trace
+
+Cache evictions: 0
+Cache accesses: 0
+Cache read hits: 0 | Cache write hits: 0
+Cache read miss: 0 | Cache write miss: 0
+Cache miss total: 0 | Cache hit total: 0
+Cache miss rate: nan %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/29 @9:4 Input File: C:\Users\Anel\Desktop\vscode\RA_CacheSim\testprogramms\swim.trace
+
+Cache evictions: 597382
+Cache accesses: 2012490
+Cache read hits: 925959 | Cache write hits: 651538
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1577497
+Cache miss rate: 21.6147 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/29 @9:8 Input File: swim.trace
+
+Cache evictions: 597508
+Cache accesses: 2010994
+Cache read hits: 924463 | Cache write hits: 651538
+Cache read miss: 163143 | Cache write miss: 271850
+Cache miss total: 434993 | Cache hit total: 1576001
+Cache miss rate: 21.6307 %
+Number of cache blocks: 1000, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/29 @9:8 Input File: swim.trace
+
+Cache evictions: 1221969
+Cache accesses: 2308364
+Cache read hits: 298916 | Cache write hits: 27255
+Cache read miss: 787478 | Cache write miss: 1194715
+Cache miss total: 1982193 | Cache hit total: 326171
+Cache miss rate: 85.87 %
+Number of cache blocks: 9, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1

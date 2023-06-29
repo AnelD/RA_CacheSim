@@ -1,0 +1,230 @@
+----------------------------------------------------------------------------------------
+6/28 @23:23 Input File: trace.out
+
+Cache evictions: 3516528
+Cache accesses: 11188079
+Cache read hits: 4840411 | Cache write hits: 1148851
+Cache read miss: 2162397 | Cache write miss: 3036420
+Cache miss total: 5198817 | Cache hit total: 5989262
+Cache miss rate: 46.4675 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:23 Input File: trace.out
+
+Cache evictions: 3536433
+Cache accesses: 11473574
+Cache read hits: 4967184 | Cache write hits: 1266474
+Cache read miss: 2182302 | Cache write miss: 3057614
+Cache miss total: 5239916 | Cache hit total: 6233658
+Cache miss rate: 45.6694 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:24 Input File: trace.out
+
+Cache evictions: 3436142
+Cache accesses: 11785356
+Cache read hits: 5369489 | Cache write hits: 1382803
+Cache read miss: 2082267 | Cache write miss: 2950797
+Cache miss total: 5033064 | Cache hit total: 6752292
+Cache miss rate: 42.7061 %
+Number of cache blocks: 2048, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:24 Input File: trace.out
+
+Cache evictions: 3368802
+Cache accesses: 12125040
+Cache read hits: 5748907 | Cache write hits: 1479185
+Cache read miss: 2015438 | Cache write miss: 2881510
+Cache miss total: 4896948 | Cache hit total: 7228092
+Cache miss rate: 40.3871 %
+Number of cache blocks: 4096, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:24 Input File: trace.out
+
+Cache evictions: 3002242
+Cache accesses: 11286375
+Cache read hits: 5717598 | Cache write hits: 1586251
+Cache read miss: 1648111 | Cache write miss: 2334415
+Cache miss total: 3982526 | Cache hit total: 7303849
+Cache miss rate: 35.2861 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:24 Input File: trace.out
+
+Cache evictions: 2312800
+Cache accesses: 12949079
+Cache read hits: 8667580 | Cache write hits: 1803864
+Cache read miss: 958669 | Cache write miss: 1518966
+Cache miss total: 2477635 | Cache hit total: 10471444
+Cache miss rate: 19.1337 %
+Number of cache blocks: 1024, Size of blocks: 128, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:24 Input File: trace.out
+
+Cache evictions: 1935882
+Cache accesses: 14620690
+Cache read hits: 10801252 | Cache write hits: 2375918
+Cache read miss: 581751 | Cache write miss: 861769
+Cache miss total: 1443520 | Cache hit total: 13177170
+Cache miss rate: 9.87313 %
+Number of cache blocks: 1024, Size of blocks: 256, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:25 Input File: trace.out
+
+Cache evictions: 4205567
+Cache accesses: 11706437
+Cache read hits: 4050303 | Cache write hits: 933832
+Cache read miss: 2851436 | Cache write miss: 3870866
+Cache miss total: 6722302 | Cache hit total: 4984135
+Cache miss rate: 57.424 %
+Number of cache blocks: 1024, Size of blocks: 16, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:25 Input File: trace.out
+
+Cache evictions: 5092836
+Cache accesses: 12003201
+Cache read hits: 2726163 | Cache write hits: 720843
+Cache read miss: 3738705 | Cache write miss: 4817490
+Cache miss total: 8556195 | Cache hit total: 3447006
+Cache miss rate: 71.2826 %
+Number of cache blocks: 1024, Size of blocks: 8, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:25 Input File: trace.out
+
+Cache evictions: 3566774
+Cache accesses: 13764872
+Cache read hits: 6513885 | Cache write hits: 1947967
+Cache read miss: 2212517 | Cache write miss: 3090503
+Cache miss total: 5303020 | Cache hit total: 8461852
+Cache miss rate: 38.5257 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 8, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:26 Input File: trace.out
+
+Cache evictions: 3573515
+Cache accesses: 17223867
+Cache read hits: 9086937 | Cache write hits: 2815226
+Cache read miss: 2219194 | Cache write miss: 3102510
+Cache miss total: 5321704 | Cache hit total: 11902163
+Cache miss rate: 30.8973 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 16, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:26 Input File: trace.out
+
+Cache evictions: 3568153
+Cache accesses: 19500463
+Cache read hits: 10937405 | Cache write hits: 3249871
+Cache read miss: 2213800 | Cache write miss: 3099387
+Cache miss total: 5313187 | Cache hit total: 14187276
+Cache miss rate: 27.2465 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:26 Input File: trace.out
+
+Cache evictions: 3526708
+Cache accesses: 9939942
+Cache read hits: 3942402 | Cache write hits: 775043
+Cache read miss: 2172832 | Cache write miss: 3049665
+Cache miss total: 5222497 | Cache hit total: 4717445
+Cache miss rate: 52.5405 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 2, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:26 Input File: trace.out
+
+Cache evictions: 3527626
+Cache accesses: 9118107
+Cache read hits: 3415222 | Cache write hits: 474556
+Cache read miss: 2174250 | Cache write miss: 3054079
+Cache miss total: 5228329 | Cache hit total: 3889778
+Cache miss rate: 57.3401 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 1, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:27 Input File: trace.out
+
+Cache evictions: 3589310
+Cache accesses: 9763296
+Cache read hits: 3848965 | Cache write hits: 553875
+Cache read miss: 2235179 | Cache write miss: 3125277
+Cache miss total: 5360456 | Cache hit total: 4402840
+Cache miss rate: 54.9042 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 1, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:27 Input File: trace.out
+
+Cache evictions: 3516742
+Cache accesses: 11195984
+Cache read hits: 4846646 | Cache write hits: 1150107
+Cache read miss: 2162611 | Cache write miss: 3036620
+Cache miss total: 5199231 | Cache hit total: 5996753
+Cache miss rate: 46.4384 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:27 Input File: trace.out
+
+Cache evictions: 2196715
+Cache accesses: 9142055
+Cache read hits: 3393678 | Cache write hits: 461037
+Cache read miss: 2196969 | Cache write miss: 3090371
+Cache miss total: 5287340 | Cache hit total: 3854715
+Cache miss rate: 57.8354 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 2, Writing policy: 0
+----------------------------------------------------------------------------------------
+6/28 @23:27 Input File: trace.out
+
+Cache evictions: 2209615
+Cache accesses: 9158117
+Cache read hits: 3383620 | Cache write hits: 470485
+Cache read miss: 2209869 | Cache write miss: 3094143
+Cache miss total: 5304012 | Cache hit total: 3854105
+Cache miss rate: 57.916 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 0
+----------------------------------------------------------------------------------------
+6/28 @23:29 Input File: trace.out
+
+Cache evictions: 1794274
+Cache accesses: 8752561
+Cache read hits: 3808031 | Cache write hits: 667326
+Cache read miss: 1794402 | Cache write miss: 2482802
+Cache miss total: 4277204 | Cache hit total: 4475357
+Cache miss rate: 48.868 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 8, Eviction policy: 0, Writing policy: 0
+----------------------------------------------------------------------------------------
+6/28 @23:30 Input File: trace.out
+
+Cache evictions: 3027551
+Cache accesses: 14401877
+Cache read hits: 7804562 | Cache write hits: 2565043
+Cache read miss: 1673294 | Cache write miss: 2358978
+Cache miss total: 4032272 | Cache hit total: 10369605
+Cache miss rate: 27.9982 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 8, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:30 Input File: trace.out
+
+Cache evictions: 2363261
+Cache accesses: 23335242
+Cache read hits: 15654614 | Cache write hits: 5103106
+Cache read miss: 1008940 | Cache write miss: 1568582
+Cache miss total: 2577522 | Cache hit total: 20757720
+Cache miss rate: 11.0456 %
+Number of cache blocks: 1024, Size of blocks: 128, Associativity: 16, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:31 Input File: trace.out
+
+Cache evictions: 2220509
+Cache accesses: 25697106
+Cache read hits: 17656221 | Cache write hits: 5750293
+Cache read miss: 866252 | Cache write miss: 1424340
+Cache miss total: 2290592 | Cache hit total: 23406514
+Cache miss rate: 8.91381 %
+Number of cache blocks: 2048, Size of blocks: 128, Associativity: 16, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/28 @23:31 Input File: trace.out
+
+Cache evictions: 1832682
+Cache accesses: 28908842
+Cache read hits: 21104501 | Cache write hits: 6568573
+Cache read miss: 478424 | Cache write miss: 757344
+Cache miss total: 1235768 | Cache hit total: 27673074
+Cache miss rate: 4.27471 %
+Number of cache blocks: 2048, Size of blocks: 256, Associativity: 16, Eviction policy: 0, Writing policy: 1
