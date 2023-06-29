@@ -751,3 +751,43 @@ Cache evictions: 646104
 Cache misses: 850972
 Cache miss rate: 25.1141 %
 Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:58 Input File: art.trace
+
+Cache evictions: 646206
+Cache accesses: 3390160
+Cache read hits: 1831615 | Cache write hits: 707370
+Cache read miss: 420579 | Cache write hits: 430596
+Cache miss total: 851175 | Cache hit total: 2538985
+Cache miss rate: 25.1072 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @22:59 Input File: art.trace
+
+Cache evictions: 646186
+Cache accesses: 3388689
+Cache read hits: 1830487 | Cache write hits: 707062
+Cache read miss: 420559 | Cache write miss: 430581
+Cache miss total: 851140 | Cache hit total: 2537549
+Cache miss rate: 25.1171 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @23:0 Input File: trace.out
+
+Cache evictions: 2978763
+Cache accesses: 11024572
+Cache read hits: 5612240 | Cache write hits: 1478348
+Cache read miss: 1624632 | Cache write miss: 2309352
+Cache miss total: 3933984 | Cache hit total: 7090588
+Cache miss rate: 35.6838 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/27 @23:1 Input File: crafty_mem.trace
+
+Cache evictions: 6196014
+Cache accesses: 102367806
+Cache read hits: 80518049 | Cache write hits: 20652672
+Cache read miss: 587902 | Cache write miss: 609183
+Cache miss total: 1197085 | Cache hit total: 101170721
+Cache miss rate: 1.1694 %
+Number of cache blocks: 1024, Size of blocks: 64, Associativity: 4, Eviction policy: 2, Writing policy: 1
