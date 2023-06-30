@@ -318,3 +318,23 @@ Cache read miss: 576137 | Cache write miss: 586148
 Cache miss total: 1162285 | Cache hit total: 89021707
 Cache miss rate: 1.28879 %
 Number of cache blocks: 1024, Size of blocks: 64, Associativity: 256, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/29 @13:13 Input File: art.trace
+
+Cache evictions: 701797
+Cache accesses: 4531963
+Cache read hits: 2858276 | Cache write hits: 701332
+Cache read miss: 476170 | Cache write miss: 496185
+Cache miss total: 972355 | Cache hit total: 3559608
+Cache miss rate: 21.4555 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 4, Eviction policy: 0, Writing policy: 1
+----------------------------------------------------------------------------------------
+6/29 @13:34 Input File: art.trace
+
+Cache evictions: 705415
+Cache accesses: 34610265
+Cache read hits: 28304433 | Cache write hits: 5326685
+Cache read miss: 479566 | Cache write miss: 499581
+Cache miss total: 979147 | Cache hit total: 33631118
+Cache miss rate: 2.82907 %
+Number of cache blocks: 1024, Size of blocks: 32, Associativity: 32, Eviction policy: 0, Writing policy: 1
